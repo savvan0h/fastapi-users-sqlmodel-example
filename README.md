@@ -70,9 +70,9 @@ fastapi-users-sqlmodel-example/
 └── README.md
 ```
 
-## Important differences from [sqlalchemy example](https://github.com/fastapi-users/fastapi-users/tree/v14.0.1/examples/sqlalchemy)
+## Important Differences From [SQLAlchemy Example](https://github.com/fastapi-users/fastapi-users/tree/v14.0.1/examples/sqlalchemy)
 
-### Alembic setup
+### Alembic Setup
 
 - Set `sqlalchemy.url` in `alembic.ini` to a sync URL: `sqlite:///./test.db`
 - Add the following to `alembic/env.py`:
