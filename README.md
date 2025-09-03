@@ -90,18 +90,18 @@ import fastapi_users_db_sqlalchemy
 import sqlmodel.sql.sqltypes
 ```
 
-### Models (app/models.py)
+### Model Integration (app/models.py)
 
 - Set `SQLModel.metadata` to `Base.metadata`
 - Set `SQLModel._sa_registry` to `Base.registry`
 - Add a relationship between `User` (SQLAlchemy) and `UserGroup` (SQLModel)
 
-### DB module (app/db.py)
+### Database Session Management (app/db.py)
 
 - Use SQLModel's `AsyncSession` instead of SQLAlchemy's
 - Remove the `create_db_and_tables` function in favor of Alembic
 
-### App module (app/app.py)
+### Application Routes (app/app.py)
 
 - Remove the `lifespan` event that creates tables, since Alembic is used
 - Add the `/user-groups/{group_id}/users` endpoint to demonstrate the relationship between SQLAlchemy and SQLModel models
