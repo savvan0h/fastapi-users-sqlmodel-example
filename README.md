@@ -92,8 +92,9 @@ import sqlmodel.sql.sqltypes
 
 ### Model Integration (app/models.py)
 
-- Set `SQLModel.metadata` to `Base.metadata`
-- Set `SQLModel._sa_registry` to `Base.registry`
+- Bind SQLModel to SQLAlchemy’s shared metadata and class registry:
+  - `SQLModel.metadata = Base.metadata`
+  - `SQLModel._sa_registry = Base.registry`
 - Add a relationship between `User` (SQLAlchemy) and `UserGroup` (SQLModel)
 
 ### Database Session Management (app/db.py)
